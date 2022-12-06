@@ -1,0 +1,12 @@
+<%- include('partials/header'); -%>
+<h1>Home</h1>
+<p><%= startingContent%></p>
+
+<%# for each loop %>
+<% postMessages.forEach(function(message) { %>
+<h3><%=message.title %></h3>
+<p><%=message.body.substring(0,100) + "... "%>
+<a href="/posts/<%=message._id %>">Read more</a></p>
+<%});%>
+
+<%- include('partials/footer'); -%>
